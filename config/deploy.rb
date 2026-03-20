@@ -7,7 +7,13 @@ set :repo_url, "https://github.com/Obunde/aws_deployment.git"
 set :bundle_without, %w{test}.join(':')
 set :rbenv_version, '3.3.0'
 append :linked_files, 'config/secrets.yml'
+append :linked_dirs, 'tmp/sockets', 'tmp/pids', 'log'
 # Default branch is :master
+set :branch, 'main'
+
+set :default_env, {
+  'NODE_OPTIONS' => '--openssl-legacy-provider'
+}
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
