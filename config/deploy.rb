@@ -6,7 +6,7 @@ set :repo_url, "https://github.com/Obunde/aws_deployment.git"
 
 set :bundle_without, %w{test}.join(':')
 set :rbenv_version, '3.3.0'
-append :linked_files, 'config/secrets.yml'
+append :linked_files, 'config/secrets.yml', 'config/database.yml', '.env'
 append :linked_dirs, 'tmp/sockets', 'tmp/pids', 'log'
 # Default branch is :master
 set :branch, 'main'
